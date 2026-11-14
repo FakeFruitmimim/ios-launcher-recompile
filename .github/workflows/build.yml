@@ -20,14 +20,14 @@ jobs:
     - name: Create local.properties
       run: echo "sdk.dir=$ANDROID_SDK_ROOT" > app-source/local.properties
 
-    - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@v3
+    - name: Setup Gradle 8.5
+      uses: gradle/actions/setup-gradle@v4
+      with:
+        gradle-version: '8.5'
 
     - name: Build Debug Full APK
       working-directory: ./app-source
-      run: |
-        chmod +x gradlew
-        ./gradlew assembleDebugFull --stacktrace
+      run: gradle assembleDebugFull --stacktrace
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
