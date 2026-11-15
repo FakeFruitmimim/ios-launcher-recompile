@@ -20,10 +20,10 @@ jobs:
     - name: Create local.properties
       run: echo "sdk.dir=$ANDROID_SDK_ROOT" > app-source/local.properties
 
-    - name: Setup Gradle 8.5
+    - name: Setup Gradle 9.3.0
       uses: gradle/actions/setup-gradle@v4
       with:
-        gradle-version: '8.5'
+        gradle-version: '9.3.0'
 
     - name: Build Debug Full APK
       working-directory: ./app-source
