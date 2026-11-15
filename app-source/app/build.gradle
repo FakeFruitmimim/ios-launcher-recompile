@@ -5,9 +5,8 @@ import java.util.zip.ZipEntry
 import java.util.zip.ZipFile
 import java.util.zip.ZipOutputStream
 
-plugins {
-    id 'com.android.application'
-}
+apply plugin: 'com.android.application'
+
 
 // How this project builds (see tools/libjar for the inputs in libs/):
 //   * javac compiles the decompiled app sources against libs/compile-libs.jar, the original library
